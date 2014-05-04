@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="{{site.url}}/css/syntax.css">
+
+	<link rel="stylesheet" href="{{site.url}}/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+	<link rel="stylesheet" href="{{site.url}}/css/main.css">
+	
+	<!-- Import font -->
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+    </head>
+    <body>
+
+	<div class="cover-img">
+		<div class="container">
+          <div class="header">
+		  <h1 class="title"><a href="{{site.url}}">{{ site.name }}</a></h1><br />
+		  <a href="http://www.twitter.com/weewrightsite">Twiter</a>
+		   | <a href="http://github.com/andrew-js-wright">Github</a>
+		   | <a href="mailto:andrew.js.wright@gmail.com">Email</a>
+    </div>
+    </div>
+	</div>
+	</div>
+	<div class="container">
+
+          {{ content }}
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+	        Andrew Wright<br />
+                Software Engineer<br />
+                andrew.js.wright@gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/andrew-js-wright">github.com/andrew-js-wright</a><br />
+                <a href="https://twitter.com/weewrightsite">twitter.com/weewrightsite</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
