@@ -4,7 +4,7 @@ layout: post
 ---
 I have just finished [James Hughes'](https://twitter.com/kouphax) tutorial for
 the Java implementation of the play framework. I found it useful, giving a
-holistic view of the framework, without going into uneccessary details. This
+holistic view of the framework, without going into unnecessary details. This
 blog post will cover what I, having a fleeting knowledge of Play,
 find most helpful about the framework from a software development point of view.
 
@@ -14,7 +14,7 @@ uses the MVC model of application development giving you a lot of helpers when
 implementing this for the web. The framework recognises that concurrency and
 scalability are fundamental to modern web app development and is built with this
 in mind. From template type safety to hot deployments, the framework is packed
-with developer friendly features which take a lot of the meanial tasks out of
+with developer friendly features which take a lot of the menial tasks out of
 web development. Play is a framework that runs on the Java Virtual Machine and
 is implemented in both Scala and Java. It is the second iteration of the
 framework, which has been rewritten from a Java code base to Scala.
@@ -24,9 +24,9 @@ I'll not rewrite the website on this, but here are a few
 things that I appreciated about Play:
 
 ###Hot deployment
-Ok, so not a feature unique to play but super handy. Basically you can tinker
+OK, so not a feature unique to play but super handy. Basically you can tinker
 with any part of the app, write another route for example, while the app is
-running and when you reload the webpage - there it is. It's so intuitive,
+running and when you reload the web page - there it is. It's so intuitive,
 make a change, and see the change. What's not to love?
 
 ###Templating type safety
@@ -44,7 +44,7 @@ away from hiding errors in the terminal where you have to note the file name and
 line number before flicking over to your editor to chase it up. Play compiles the
 most relevant information and gives you a nicely formatted screen so at a
 glance you have a fair idea exactly what you need to change to get it working
-again. This is a prime exmple of how developers' needs have been prioritised in
+again. This is a prime example of how developers' needs have been prioritised in
 creating this framework. 
 
 ![Play displaying a compiler error in the browser]({{site.url}}/img/browser-error.png)
@@ -72,7 +72,7 @@ were the things that made a difference to me.
 
 If you want to know more about play checkout:
 
-- [The offical website](http://www.playframework.com/)
+- [The official website](http://www.playframework.com/)
 - [Wikipedia](http://en.wikipedia.org/wiki/Play!_Framework)
 - [Pluralsight training (membership
   required)](http://pluralsight.com/training/courses/TableOfContents?courseName=play-2-java&highlight=james-hughes_play-2-for-java-m1-introduction*3!james-hughes_play-2-for-java-m3-routing*4,6,5,7!james-hughes_play-2-for-java-m5-views*1!james-hughes_play-2-for-java-m2-starting-up*1,2#play-2-for-java-m1-introduction)
