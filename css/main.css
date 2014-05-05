@@ -16,7 +16,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poly', serif;
 }
 
 /*h1, h2, h3, h4, h5, h6 {
@@ -69,11 +69,8 @@ img {
 /*
 /*****************************************************************************/
 
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
+body {
+  font-size: 20px;
   line-height: 1.5em;
 }
 

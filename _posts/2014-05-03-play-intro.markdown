@@ -1,7 +1,7 @@
 ---
+title: Introduction to Play 2 framework for Java
 layout: post
 ---
-#Introduction to the Play 2 framework for Java 
 I have just finished [James Hughes'](https://twitter.com/kouphax) tutorial for
 the Java implementation of the play framework. I found it useful, giving a
 holistic view of the framework, without going into uneccessary details. This
