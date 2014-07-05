@@ -16,11 +16,12 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font-family: 'Poly', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-/*h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poly', serif;
+}
 
 h1 { 
      font-size: 2em;
@@ -54,13 +55,13 @@ img {
   max-width: 100%;
 }
 
-.posts li {
-  line-height: 1.75em;
+.posts h2 {
+  margin-bottom: 0px;
 }
 
 .posts span {
   color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
+  font-family: 'Open Sans', sans-serif;
   font-size: 80%;
 }
 
@@ -78,6 +79,10 @@ body {
 .header a {
   text-decoration: none;
   color: rgb(240,240,240);
+}
+
+.header a:hover {
+  color: white; 
 }
 
 .header h1 {
@@ -102,6 +107,7 @@ body {
 .header {
   margin-top: 5em;
   margin-bottom: 5em;
+  color: rgb(240,240,240);
 }
 
 .header a.extra {
@@ -132,6 +138,11 @@ body {
 
 .footer .contact a {
   color: #8085C1;
+}
+
+.footer .links{
+  float: right;
+  text-align: right;
 }
 
 .footer .rss {
