@@ -31,9 +31,9 @@ h1 {
 
  p { margin: 1em 0; }
 
- a         { color: #00a; }
- a:hover   { color: #000; }
- a:visited { color: #a0a; }
+ a         { color: #428bca; }
+ a:hover   { color: #428bca; }
+ a:visited { color: #428bca; }
  .container { max-width: 750px; }
  /*****************************************************************************/
  /*
@@ -168,9 +168,13 @@ body {
 }
 
 .post pre {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    padding: 0 .4em;
+    margin: 50px 10px;
+    border-color: white;
+    background-color: #F9F7F7;
+    word-wrap: normal;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 2em;
 }
 
 .post-title {
@@ -178,13 +182,13 @@ body {
 }
 
 .post ul, .post ol {
-    margin-left: 1.35em;
+    margin-left: 2.35em;
 }
 
 .post code {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    padding: 0 .2em;
+    color: #575354;
+    font-size: 15px;
+    background-color: #F9F7F7;
 }
 
 .pick-and-mix li {
@@ -192,6 +196,7 @@ body {
 }
 
 .post pre code {
+    white-space: pre;
     border: none;
 }
 
@@ -199,7 +204,6 @@ body {
     text-align: justify;
 }
 
-/* terminal */
 .post pre.terminal {
     border: 1px solid #000;
     background-color: #333;
