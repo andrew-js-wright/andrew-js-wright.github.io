@@ -305,7 +305,7 @@ container. The outlier here is the web box which has a different set of
 dependencies and uses nginx to act as a reverse proxy, co-coordinating
 communication between the user and the underlying services. </p>
 
-<h3>The web container</h3>
+<h3>The Web Container</h3>
 
 <p>Because the web container is a little different I felt it
 made sense to put it&#39;s provisioning in a <a href="https://github.com/andrew-js-wright/lxc-dropwizard-authentication-authorisation/blob/master/lxc/image-nginx-lua/provision.sh">separate script</a> 
@@ -318,15 +318,16 @@ to the lxc-attach utility.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo lxc-create -t ubuntu -n web sudo lxc-start -n web
 
-sudo lxc-attach -n web -- apt-get update sudo lxc-attach -n web -- apt-get -y
-install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl
-build-essential curl
+sudo lxc-attach -n web -- apt-get update sudo lxc-attach -n web -- apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl build-essential curl
 
-sudo lxc-attach -n web --  <span class="s">&lt;&lt; SCRIPT curl -0</span>
-<span class="s">http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz tar xzvf</span>
-<span class="s">ngx_openresty-1.7.10.1.tar.gz cd ngx_openresty-1.7.10.1 ./configure</span>
-<span class="s">--with-luajit --with-http_gzip_static_module --with-http_ssl_module</span>
-<span class="s">--with-pcre-jit make make install start web SCRIPT</span></code></pre></div>
+sudo lxc-attach -n web --  <span class="s">&lt;&lt; SCRIPT </span>
+<span class="s">    curl -0 http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz </span>
+<span class="s">    tar xzvf ngx_openresty-1.7.10.1.tar.gz cd ngx_openresty-1.7.10.1 </span>
+<span class="s">    ./configure --with-luajit --with-http_gzip_static_module --with-http_ssl_module --with-pcre-jit </span>
+<span class="s">    make </span>
+<span class="s">    make install </span>
+<span class="s">    start web </span>
+<span class="s">SCRIPT</span></code></pre></div>
 
 <p>The web provision script is ran from the original provision script. Once
 we have re-provisioned the boxes (either by running <code>vagrant provision</code> or

@@ -274,7 +274,7 @@ container. The outlier here is the web box which has a different set of
 dependencies and uses nginx to act as a reverse proxy, co-coordinating
 communication between the user and the underlying services. 
 
-###The web container 
+###The Web Container 
 Because the web container is a little different I felt it
 made sense to put it's provisioning in a [separate script](https://github.com/andrew-js-wright/lxc-dropwizard-authentication-authorisation/blob/master/lxc/image-nginx-lua/provision.sh) 
 to easily see what's going on.
@@ -287,15 +287,16 @@ to the lxc-attach utility.
 {% highlight bash %} 
 sudo lxc-create -t ubuntu -n web sudo lxc-start -n web
 
-sudo lxc-attach -n web -- apt-get update sudo lxc-attach -n web -- apt-get -y
-install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl
-build-essential curl
+sudo lxc-attach -n web -- apt-get update sudo lxc-attach -n web -- apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl build-essential curl
 
-sudo lxc-attach -n web --  << SCRIPT curl -0
-http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz tar xzvf
-ngx_openresty-1.7.10.1.tar.gz cd ngx_openresty-1.7.10.1 ./configure
---with-luajit --with-http_gzip_static_module --with-http_ssl_module
---with-pcre-jit make make install start web SCRIPT 
+sudo lxc-attach -n web --  << SCRIPT 
+    curl -0 http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz 
+    tar xzvf ngx_openresty-1.7.10.1.tar.gz cd ngx_openresty-1.7.10.1 
+    ./configure --with-luajit --with-http_gzip_static_module --with-http_ssl_module --with-pcre-jit 
+    make 
+    make install 
+    start web 
+SCRIPT 
 {% endhighlight %}
 
 The web provision script is ran from the original provision script. Once
