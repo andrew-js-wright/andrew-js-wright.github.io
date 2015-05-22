@@ -435,5 +435,5 @@ to `localhost:8080` on the web browser. This should show you the first page of t
 
 #Redeploying Code
 Now when you make a change to the source code and rebuild the jars a `vagrant provision` run will
-recreate you containers and deploy the JARs onto a fresh environment making sure you don't 
+recreate your containers and deploy the JARs onto a fresh environment making sure you don't 
 get away with any hacky manual fixes which aren't stored in a provision script somewhere.
