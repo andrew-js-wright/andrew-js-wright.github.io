@@ -265,7 +265,7 @@ configuration file following file at the location <code>/etc/init/frontend.conf<
 which will have the following contents:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Front ends init script for upstart </span>
-start on file system and net-device-up IFACE!<span class="o">=</span>lo 
+start on filesystem and net-device-up IFACE!<span class="o">=</span>lo 
 script 
     java -jar /frontend/FrontendApplication.jar
     server /frontend/config.yml end 
@@ -358,8 +358,8 @@ virtual ethernet connection to a bridge on the host machine. This allows the
 host to access the container and visa versa. Lets ping a container from the
 vagrant host to prove that we can communicate with it.</p>
 
-<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">vagrant@vagrant-ubuntu-trusty-64:~$</span> ping -c <span class="m">3</span> <span class="k">$(</span>sudo
-<span class="go">lxc-info -n frontend -iH) PING 10.0.3.108 (10.0.3.108) 56(84) bytes of data.</span>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">vagrant@vagrant-ubuntu-trusty-64:~$</span> ping -c <span class="m">3</span> <span class="k">$(</span>sudo lxc-info -n frontend -iH<span class="k">)</span> 
+<span class="go">PING 10.0.3.108 (10.0.3.108) 56(84) bytes of data.</span>
 <span class="go">64 bytes from 10.0.3.108: icmp_seq=1 ttl=64 time=0.039 ms </span>
 <span class="go">64 bytes from 10.0.3.108: icmp_seq=2 ttl=64 time=0.085 ms </span>
 <span class="go">64 bytes from 10.0.3.108: icmp_seq=3 ttl=64 time=0.130 ms</span>

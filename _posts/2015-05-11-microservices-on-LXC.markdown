@@ -229,7 +229,7 @@ which will have the following contents:
 
 {% highlight bash %} 
 # Front ends init script for upstart 
-start on file system and net-device-up IFACE!=lo 
+start on filesystem and net-device-up IFACE!=lo 
 script 
     java -jar /frontend/FrontendApplication.jar
     server /frontend/config.yml end 
@@ -330,8 +330,8 @@ host to access the container and visa versa. Lets ping a container from the
 vagrant host to prove that we can communicate with it.
 
 {% highlight console %} 
-vagrant@vagrant-ubuntu-trusty-64:~$ ping -c 3 $(sudo
-lxc-info -n frontend -iH) PING 10.0.3.108 (10.0.3.108) 56(84) bytes of data.
+vagrant@vagrant-ubuntu-trusty-64:~$ ping -c 3 $(sudo lxc-info -n frontend -iH) 
+PING 10.0.3.108 (10.0.3.108) 56(84) bytes of data.
 64 bytes from 10.0.3.108: icmp_seq=1 ttl=64 time=0.039 ms 
 64 bytes from 10.0.3.108: icmp_seq=2 ttl=64 time=0.085 ms 
 64 bytes from 10.0.3.108: icmp_seq=3 ttl=64 time=0.130 ms
