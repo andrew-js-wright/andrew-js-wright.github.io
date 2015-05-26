@@ -37,28 +37,28 @@
 
 <div class="post">
 <p>I&#39;ve been working on a pretty hefty web application for the passed two years
-and I&#39;m starting to think that we were doing it wrong.</p>
+and I want to share one of the things we did wrong at the start.</p>
 
 <h1>Angular Addiction</h1>
 
 <p>When I joined the project I had never developed an enterprise web application
-before I was fresh out of university and had boots full of design pattern theory
+before. I was fresh out of university and had boots full of design pattern theory
 and <a href="http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a>
 principles ready to hit the ground running. So going onto a project which was 
 using <a href="%22https://angularjs.org%22">AngularJS</a>
 with it&#39;s MVC programming model and easily testable founding principles seemed like
-a dream. And it was. It was great - controllers were easily testable, services took
-care of talking to a web service for persistence, views were templated out and had
+a dream. And it was. It was great - controllers were easily testable, services handled
+communication with a web service for persistence, views were templated out and had
 very little logic. The world was good.</p>
 
 <p>As a developer I could write code and unit tests using really interesting libraries
 and ride the crest of the JavaScript hype wave. The entire frontend application was
-thoroughly tested using unit tests and we, as a team, were pretty confident that 
+thoroughly unit tested and we, as a team, were pretty confident that 
 it would serve us well out in the wild. </p>
 
 <h1><a href="https://www.youtube.com/watch?v=K1b8AhIsSYQ">We Built This City On JavaScript</a></h1>
 
-<p>Everything remained pretty good until I read 
+<p>My conscience was clean until I read 
 <a href="https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/">this article</a> 
 by Peter Herlihy. In it he suggests that as many as 1.1% of people aren&#39;t running
 JavaScript and therefore wouldn&#39;t be able to access any part of a web application written
@@ -88,35 +88,37 @@ receive it. This can be for a whole host of reasons some of those suggested incl
 <h1>Going Cold Turkey</h1>
 
 <p>So we find ourselves in a position where we have built an application solely on JavaScript
-and there are some fundamental pages which simply won&#39;t work without JavaScript because
+and there are some fundamental pages which simply can&#39;t be implemented without JavaScript because
 the business area is so complex. So what do we do?</p>
 
 <h2>Build What You Can Without JavaScript</h2>
 
 <p>It seems simple but it is an important precedent to set as early as possible. If everyone
-is on board with including as many users as possible we should be doing as many user
-journeys as possible without JavaScript and build JavaScript enhancements in to make 
+is on board with including as many users as possible we should be implementing as much
+functionality as possible without JavaScript and use JavaScript enhancements to make 
 the application more usable. Lets take a look at an example.</p>
 
-<h3>Case Study</h3>
+<h3>Example Application</h3>
 
-<p>Lets say, for example, we are building an online assignment submission and grading application
-which needs to have the following features:</p>
+<p>Lets say we are building an online assignment submission and grading application for
+a university which needs to have the following features:</p>
 
-<ul>
-<li>Authenticates users validating input</li>
-<li>Allows students to submit an assignment</li>
+<ol>
+<li>Users can log in</li>
+<li>Students can submit an assignment</li>
 <li>Teachers can use a JavaScript library to grade and annotate an assignment</li>
-<li>Students can view graded and annotated assignments using JavaScript library</li>
-</ul>
+<li>Students can view their grade and feedback using JavaScript library</li>
+</ol>
 
 <p>It may seem like an obvious choice to use a JavaScript framework such as Angular because
 we are already dependent on JavaScript. If we did this however we would needlessly
 be excluding people who can&#39;t access JavaScript from submitting their assignments.</p>
 
-<p>It is possible therefore to make a hybrid solution where we provide the base HTML and CSS to
+<p>It is possible to make a hybrid solution where we provide the base HTML and CSS to
 implement the first two features and enhance them with JavaScript. For the second two
-you would bootstrap your JavaScript application as normal when the user journey required it.</p>
+you would bootstrap your JavaScript application as normal when the user required it.
+This way any student who was unable to run JavaScript is still able to submit their
+assignment on time.</p>
 
 <h1>Use Tools To Keep the Good Bits</h1>
 
