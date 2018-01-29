@@ -7,7 +7,7 @@ tags:
 - network 
 --- 
 
-IP whitelisting is a common security measure used to protect web services. It filters traffic by the source IP address only allowing pre-approved addresses to access the service. It’s been around for a long time and recently a colleague asked if it was still secure. As discussed below, IP whitelisting isn’t a silver bullet but in the right circumstances is still a useful security control.
+IP whitelisting is a common security measure used to protect web services. It filters traffic by the source IP address allowing pre-approved addresses to access the service. It’s been around for a long time and recently a colleague asked if it was still secure. As discussed below, IP whitelisting isn’t a silver bullet but in the right circumstances is still a useful security control.
 
 Before we can get into whether something is secure or not we need to define what secure means. A common rubric used to measure the security of a system is it’s ability to protect Confidentiality, Integrity and Availability. Lets apply that to IP whitelisting and see how it holds up.
 
