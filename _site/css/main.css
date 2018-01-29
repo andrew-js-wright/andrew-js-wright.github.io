@@ -1,5 +1,3 @@
----
----
 /*****************************************************************************/
 /*
 /* Common
@@ -43,7 +41,7 @@ h1 {
  .cover-img {
      text-align: center;
      max-width: 100%;
-     background-image: url('{{site.url}}/img/blog-cover.jpg');
+     background-image: url('/img/blog-cover.jpg');
      background-size: cover;
      background-position: 0% 50%;
 }

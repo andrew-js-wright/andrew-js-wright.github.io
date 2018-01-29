@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Progressive Enhancement - My AngularJS Detox</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+	
+	<!-- Import font -->
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+	<div class="cover-img">
+		<div class="container">
+          <div class="header">
+		  <h1 class="title"><a href="/">Andrew Wright</a></h1><br />
+		  <a href="http://www.twitter.com/weewrightsite">Twitter</a>
+		   | <a href="http://github.com/andrew-js-wright">Github</a>
+		   | <a href="mailto:andrew.js.wright@gmail.com">Email</a>
+    </div>
+    </div>
+	</div>
+	</div>
+	<div class="container">
+
+          <h1 class="post-title">Progressive Enhancement - My AngularJS Detox</h1>
+<p class="meta">26 May 2015</p>
+
+<div class="post">
+<p>I&#39;ve been working on a pretty hefty web application for the passed two years
+and I want to share one of the things we did wrong at the start.</p>
+
+<h1>Angular Addiction</h1>
+
+<p>When I joined the project I had never developed an enterprise web application
+before. I was fresh out of university and had boots full of design pattern theory
+and <a href="http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a>
+principles ready to hit the ground running. So going onto a project which was 
+using <a href="%22https://angularjs.org%22">AngularJS</a>
+with it&#39;s MVC programming model and easily testable founding principles seemed like
+a dream. And it was. It was great - controllers were easily testable, services handled
+communication with a web service for persistence, views were templated out and had
+very little logic. The world was good.</p>
+
+<p>As a developer I could write code and unit tests using really interesting libraries
+and ride the crest of the JavaScript hype wave. The entire frontend application was
+thoroughly unit tested and we, as a team, were pretty confident that 
+it would serve us well out in the wild. </p>
+
+<h1><a href="https://www.youtube.com/watch?v=K1b8AhIsSYQ">We Built This City On JavaScript</a></h1>
+
+<p>My conscience was clean until I read 
+<a href="https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/">this article</a> 
+by Peter Herlihy. In it he suggests that as many as 1.1% of people aren&#39;t running
+JavaScript and therefore wouldn&#39;t be able to access any part of a web application written
+in AngularJS. I have often heard web developers write this off and
+push the blame onto the users say things like &quot;Well if they&#39;re not going to enable 
+JavaScript they have to accept they can&#39;t use modern web apps&quot;. I get their point
+and it&#39;s a reasonable one. I mean you can&#39;t expect to use all of the features of Google
+maps, for example, without JavaScript. There is a certain onus on users if they want 
+to be able to harness all of the power available to them.</p>
+
+<p>On the other hand sometimes users choose to disable JavaScript for perfectly valid reasons
+for example users who live in remote areas where network connectivity makes it impractical
+for them to download all of the required JavaScript as it results in timeout errors. Another
+reason could be accessibility, where a blind user&#39;s screen reader doesn&#39;t handle JavaScript
+well.</p>
+
+<p>As if that wasn&#39;t reason enough to support people who aren&#39;t running JavaScript 
+Peter suggests that 0.9% of people have JavaScript enabled but still don&#39;t 
+receive it. This can be for a whole host of reasons some of those suggested include:</p>
+
+<ul>
+<li>Corporate or local blocking or stripping of JavaScript elements</li>
+<li>Existing JavaScript errors in the browser (i.e. from browser add-ons, toolbars etc)</li>
+<li>Network errors, especially on mobile devices</li>
+</ul>
+
+<h1>Going Cold Turkey</h1>
+
+<p>So we find ourselves in a position where we have built an application solely on JavaScript
+and there are some fundamental pages which simply can&#39;t be implemented without JavaScript because
+the business area is so complex. So what do we do?</p>
+
+<h2>Build What You Can Without JavaScript</h2>
+
+<p>It seems simple but it is an important precedent to set as early as possible. If everyone
+is on board with including as many users as possible we should be implementing as much
+functionality as possible without JavaScript and use JavaScript enhancements to make 
+the application more usable. Lets take a look at an example.</p>
+
+<h3>Example Application</h3>
+
+<p>Lets say we are building an online assignment submission and grading application for
+a university which needs to have the following features:</p>
+
+<ol>
+<li>Users can log in</li>
+<li>Students can submit an assignment</li>
+<li>Teachers can use a JavaScript library to grade and annotate an assignment</li>
+<li>Students can view their grade and feedback using JavaScript library</li>
+</ol>
+
+<p>It may seem like an obvious choice to use a JavaScript framework such as Angular because
+we are already dependent on JavaScript. If we did this however we would needlessly
+be excluding people who can&#39;t access JavaScript from submitting their assignments.</p>
+
+<p>It is possible to make a hybrid solution where we provide the base HTML and CSS to
+implement the first two features and enhance them with JavaScript. For the second two
+you would bootstrap your JavaScript application as normal when the user required it.
+This way any student who was unable to run JavaScript is still able to submit their
+assignment on time.</p>
+
+<h1>Use Tools To Keep the Good Bits</h1>
+
+<h2>Web Frameworks</h2>
+
+<p>We obviously want to maintain the good programming practices we had in AngularJS and
+the MVC model of separating concerns is available to us using a variety of server
+side frameworks including <a href="https://spring.io/guides/gs/serving-web-content/">Spring MVC</a> 
+and the <a href="https://www.playframework.com/">Play Framework</a>. Server side code is also
+more versed in the world of unit testing so there are loads of tools to help with 
+ensuring you are able to maintain test-ability e.g. <a href="http://junit.org/">JUnit</a>.</p>
+
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = 'andrew-wright';
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+	        Andrew Wright<br />
+                Software Engineer<br />
+                <a href="mailto:andrew.js.wright@gmail.com">andrew.js.wright@gmail.com</a>
+              </p>
+            </div>
+            <div class="links">
+              <p>
+                <a href="https://github.com/andrew-js-wright">github.com/andrew-js-wright</a><br />
+                <a href="https://twitter.com/weewrightsite">twitter.com/weewrightsite</a><br />
+              </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-61049138-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
